@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+
+	* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(-45deg, #ff4e50, #fc913a, #ff758c, #ff7eb3);
+    background-size: 400% 400%;
+    animation: gradient 8s ease infinite;
+    font-family: 'Poppins', sans-serif;
+}
+
+@keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.container {
+    text-align: center;
+    background: rgba(255,255,255,0.2);
+    padding: 50px;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 30px rgba(0,0,0,0.3);
+    color: white;
+}
+
+.glow {
+    font-size: 40px;
+    text-shadow: 0 0 10px white, 0 0 20px #ff4e50;
+}
+
+.typing {
+    margin: 20px 0;
+    font-size: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid white;
+    width: 0;
+    animation: typing 4s steps(40, end) forwards, blink 1s infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+.buttons {
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.3s;
+}
+
+.yes {
+    background: white;
+    color: #ff4e50;
+}
+
+.yes:hover {
+    transform: scale(1.2);
+}
+
+.no {
+    background: #ff4e50;
+    color: white;
+}
+
+#response {
+    margin-top: 30px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Floating Hearts */
+
+.hearts::before,
+.hearts::after {
+    content: "💖 💕 💘 💗 💓 💞";
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    animation: float 10s linear infinite;
+    font-size: 30px;
+}
+
+.hearts::after {
+    animation-delay: 5s;
+}
+
+@keyframes float {
+    0% {
+        top: 100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        top: -10%;
+        opacity: 0;
+    }
+}
+
